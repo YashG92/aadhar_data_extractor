@@ -20,7 +20,6 @@ class FormExtracted extends StatelessWidget {
 
 
   Future<void> _submitData() async {
-    // Prepare data to send
     final Map<String, dynamic> formData = {
       'name': nameController.text,
       'dob': dobController.text,
@@ -29,19 +28,17 @@ class FormExtracted extends StatelessWidget {
     };
 
     try {
-      final request = http.Request('POST', Uri.parse(scriptURL))
-        ..headers.addAll({'Content-Type': 'application/json'})
-        ..body = jsonEncode(formData);
-
-      final streamedResponse = await request.send();
-      final response = await http.Response.fromStream(streamedResponse);
+      final response = await http.post(
+        Uri.parse(scriptURL),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(formData),
+      );
 
       if (response.statusCode == 200) {
         print('Data successfully sent to Google Sheets');
       } else {
         print('Failed to send data. Status Code: ${response.statusCode}');
       }
-
     } catch (e) {
       print('Error: $e');
     }
