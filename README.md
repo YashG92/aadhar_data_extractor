@@ -1,17 +1,14 @@
-# aadhar_text_extractor
+Aadhar Data Extractor
+Extract key information (e.g., DOB) from Aadhar card images using Flutter and Google ML Kit. 
+This app leverages text recognition to parse Aadhar card details and extract the date of birth (DOB) in DD/MM/YYYY format.
 
-A new Flutter project.
+Features
+Text Recognition: Uses Google ML Kit to recognize text from Aadhar card images.
 
-## Getting Started
+DOB Extraction: Extracts the date of birth (DOB) in DD/MM/YYYY format.
 
-This project is a starting point for a Flutter application.
+Noise Handling: Cleans OCR output to handle noisy text recognition.
 
-A few resources to get you started if this is your first Flutter project:
+Validation: Validates extracted dates to ensure accuracy.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# aadhar_data_extractor" 
+Cross-Platform: Works on both Android and iOS.
